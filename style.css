@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    max-width: 1440px;
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+body{
+   background-color: #F8EEFF;
+   background-image: url(./Pictures/bg.png);
+   background-repeat: no-repeat;
+}
+.card__item{
+    padding-top: 20px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+@media screen and (max-width: 380px) {
+    .container{
+        max-width: 380px;
+    }
+}

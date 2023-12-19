@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+        <div class="container">
+          <div class=" w-[100%] h-[320px] flex relative items-center justify-items-center card">
+            <div class="card__item m-auto  cirdes">
+                <div class="classs bg-[#fff] m-auto py-10 rounded-2xl ">
+                    <div
+                    class="my-[40px] flex items-center gap-[24px] self-stretch chilar">
+                    <img src="./Pictures/star.png" alt="" class="ml-[60px] mglar" />
+                    <h1
+                      class="font-bold text-[#301534] font-['Work Sans'] text-[56px] leading-normal  hlar">
+                      FAQs
+                    </h1>
+                  </div>
+          <div class="my-10 max-w-2xl mx-auto space-y-4 lg:space-y-6" x-data="{ faq, faq_selected: null }">
+          <template x-for="(item, index) in faq" :key="`item-{$index}`">
+            <div class="card item bg-white  p-3">
+              <div class="flex items-center cursor-pointer" @click="faq_selected !== index ? faq_selected = index : faq_selected = null">
+                <hr class="h-px">
+                <div class="flex font-semibold ml-3 md:ml-4 lg:ml-6 md:text-lg text-[#301534]  hover:text-[#AD28EB]">
+                  <span x-text="item.question"></span>
+                  <img class="ml-5" src="./Pictures/plus.svg" alt="">
+                </div>
+              </div>
+              <div class="relative overflow-hidden transition-all max-h-0 duration-700" x-bind:style="faq_selected === index ? `max-height:  ${ $el.scrollHeight }px` : ``">
+                <div class="text-gray-700 ml-8 md:ml-10 pl-3 md:pl-4 lg:pl-6 py-2 space-y-3">
+                  <template x-for="(ans, index) in item.answer" :key="`item-ans-{$index}`">
+                    <p x-text="ans" class="text-[#8B6990]"></p>
+                  </template>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+    </div>
+    </div>
+    </div>
+        </div>
+        <script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js'></script>
+        <script  src="app.js"></script>
+</body>
+</html>
